@@ -1,6 +1,7 @@
 # GoodPena
 
 GoodPena adalah website landing page untuk situs ai text generatif untuk membantu dalam membuat ide konten, nulis blog, SEO copywritting, ads copywritting, nugas sekolah, hingga chatbot.
+Cek demo [disini](https://goodpena-lp.vercel.app/)
 
 ## Instalasi
 
