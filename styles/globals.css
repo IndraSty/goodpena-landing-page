@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 7.06%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210.6 86.67% 56.67%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 193, 100%, 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+
+  .font-montserrat {
+    font-family: 'Montserrat', cursive;
+  }
+
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #2263FF, #00AEE5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-container {
+    box-shadow: 0 0 5px rgba(0, 67, 109, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  .h1-semibold {
+    @apply font-semibold text-3xl text-primary
+  }
+
+  .circle-blur {
+    @apply w-60 h-60 lg:w-[450px] lg:h-[450px] bg-primary blur-3xl lg:blur-[120px] opacity-20
+  }
+
+  .circle-blur-second {
+    @apply w-60 h-60 lg:w-[450px] lg:h-[450px] bg-secondary blur-3xl lg:blur-[120px] opacity-20
+  }
+
+  /* Hero Page */
+  .navbar {
+    @apply fixed hidden lg:flex w-full items-center justify-between font-montserrat border border-b-2 border-gray-800 top-0 z-[40] px-20 py-3;
+    @apply transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply font-medium hover:text-primary transition-colors ease-in-out duration-150
+  }
+
+  .mob-navbar{
+    @apply fixed lg:hidden w-full flex justify-between items-center p-5 font-montserrat  border border-b-2 border-gray-800 top-0 z-[40]
+  }
+
+  .hero {
+    @apply flex min-h-screen flex-col items-center px-5 md:px-20 py-20 lg:px-64 lg:py-10 font-montserrat justify-center
+  }
+
+  .hero h1{
+    @apply text-3xl md:text-[50px] lg:text-[60px] font-bold text-center lg:text-center leading-snug
+  }
+
+  .hero span{
+    @apply text-gradient
+  }
+
+  .hero p{
+    @apply text-center mt-4 text-sm lg:text-lg font-medium text-gray-400
+  }
+
+  .btn-hero {
+    @apply py-6 px-10 rounded-xl bg-dark-500 font-medium text-base lg:text-xl
+  }
+
+  /* about page */
+  .wrapper {
+    @apply flex min-h-screen flex-col px-5 py-20 md:px-20 lg:px-32 lg:py-10 font-montserrat
+  }
+
+  .title {
+    @apply mt-14 w-full flex flex-col items-center gap-3 lg:px-40
+  }
+
+  .title h1{
+    @apply text-2xl md:text-[50px] lg:text-5xl font-semibold text-white text-center leading-tight
+  }
+
+  .title p {
+    @apply text-center text-gray-400 text-sm lg:text-base
+  }
+
+  .box-container {
+    @apply glow-container bg-white/10 w-full md:w-[70%] lg:w-10/12 h-64 lg:h-[640px] mt-10 p-2 rounded-xl backdrop-blur-[250px] flex justify-center items-center
+  }
+
+  .card-container {
+    @apply grid grid-rows-1 grid-cols-1 md:grid-rows-3 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-5 mt-14
+  }
+
+  .card {
+    @apply bg-white/5 w-full h-60 p-5 rounded-xl flex flex-col justify-between border-2 hover:border-secondary;
+    @apply transition-transform duration-300 ease-in-out; /* Smooth transition */
+  }
+
+  .card:hover {
+    @apply scale-105; /* Slightly increase the scale */
+  }
+
+  .card h2 {
+    @apply font-semibold text-xl
+  }
+
+  .card p {
+    @apply text-gray-400 font-medium
+  }
+
+  .icon-circle {
+    @apply w-16 h-16 bg-dark-100 rounded-full flex items-center justify-center
+  }
+
+  .icon-circle-ctc {
+    @apply w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center
+  }
+
+  .credits-list {
+    @apply mt-16 px-4 md:px-0 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-9 xl:grid-cols-3;
+  }
+
+  
+  .credits-item {
+    @apply w-full rounded-[16px] border-2 border-sky-400/20 bg-white/5 p-8 lg:max-w-none;
+    @apply transition-transform duration-300 ease-in-out;
+  }
+  
+  .credits-item:hover {
+    @apply scale-105;
+  }
+  
+  .credits-free-btn {
+    @apply w-full rounded-full bg-dark-100 bg-cover text-secondary;
+  }
+
+  .credits-btn {
+    @apply w-full rounded-full bg-my-gradient text-white;
+  }
+
+  .footer {
+    @apply w-screen pt-24 pb-8 px-5 md:px-10 lg:px-20 bg-dark-300 font-montserrat
+  }
+
+  .footer-contain{
+    @apply flex flex-col lg:flex-row lg:justify-between
+  }
+
+  .mini-box-contain{
+    @apply flex flex-col justify-start gap-4 mt-16 lg:mt-0
+  }
+
+  .list-footer{
+    @apply flex flex-col gap-3 font-medium mt-3 text-gray-300
+  }
+
+  .list-footer li {
+    @apply hover:text-secondary transition-colors duration-200
+  }
+
+}
